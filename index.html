@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧱 樂高集點卡</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 密碼畫面 -->
+    <div id="login-screen" class="screen">
+        <div class="lego-card login-card">
+            <h1 class="lego-title">🧱 樂高集點卡</h1>
+            <p class="login-subtitle">請輸入密碼進入</p>
+            <input type="password" id="password-input" class="lego-input" placeholder="密碼" autocomplete="off">
+            <button id="login-btn" class="lego-btn">進入 🔓</button>
+            <p id="login-error" class="error-msg hidden">密碼錯誤，再試一次！</p>
+        </div>
+    </div>
+
+    <!-- 主畫面 -->
+    <div id="main-screen" class="screen hidden">
+        <div class="header">
+            <h1 class="lego-title">🧱 集點卡</h1>
+            <div class="stats">
+                <span id="total-points">0</span> 點
+                <span class="milestone-badge" id="milestone-badge"></span>
+            </div>
+        </div>
+
+        <!-- 里程碑進度 -->
+        <div class="milestone-section">
+            <div class="milestone-progress">
+                <div class="milestone-bar" id="milestone-bar"></div>
+            </div>
+            <p class="milestone-text" id="milestone-text">距離下一個里程碑還需要 10 點</p>
+        </div>
+
+        <!-- 集點區 -->
+        <div class="stamp-grid" id="stamp-grid"></div>
+
+        <!-- 里程碑歷史 -->
+        <div class="milestones-history" id="milestones-history">
+            <h2 class="section-title">🏆 里程碑紀錄</h2>
+            <div class="milestone-list" id="milestone-list"></div>
+        </div>
+
+        <!-- 家長蓋章按鈕 -->
+        <div class="stamp-action">
+            <button id="stamp-btn" class="lego-btn stamp-btn">🖐️ 蓋章 +1</button>
+            <button id="reset-btn" class="lego-btn reset-btn">🔄 重置</button>
+        </div>
+
+        <!-- 設定區 -->
+        <div class="settings-section">
+            <button id="settings-toggle" class="lego-btn settings-btn">⚙️ 設定</button>
+            <div id="settings-panel" class="settings-panel hidden">
+                <label>更改密碼：</label>
+                <input type="password" id="new-password" class="lego-input" placeholder="新密碼">
+                <button id="change-password-btn" class="lego-btn">確認更改</button>
+                <label>孩子名稱：</label>
+                <input type="text" id="child-name" class="lego-input" placeholder="名字">
+                <button id="save-name-btn" class="lego-btn">儲存名稱</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
